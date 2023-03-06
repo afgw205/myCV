@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+    <title>Akram's Personal Site</title> 
+    
+    <style>
+
+
+.list-unstyled li::before {
+  content: "\2022";
+  color: #007bff;
+  margin-right: 0.5em;
+}
+
+
+.ml-3 li span {
+  display: inline-block;
+  text-indent: -1.5em;
+  margin-left: 1.5em;
+}
+
+        #message {
+            display: none;
+        }
+
+        .popup {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background-color: #f1f1f1;
+			border: 2px solid #ddd;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		}
+
+		.popup p {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+
+		.popup button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+
+        /* Set the font size to 20 pixels on large screens */
+		@media (min-width: 992px) {
+			body {
+				font-size: 20px;
+			}
+		}
+
+		/* Set the font size to 5 pixels on small screens */
+		@media (max-width: 576px) {
+			body {
+				font-size: 5vw;
+			}
+		}
+    </style>
+
+</head>
+<body class="container container-indent" style="width: 210mm; border: solid; font-size: 12pt;">
+
+<table>
+    <tr>
+        <td>
+            <img height="150" class="rounded-circle"
+            src="https://media.licdn.com/dms/image/C5603AQGpV1OG3A_IMQ/profile-displayphoto-shrink_800_800/0/1609408703813?e=1683763200&v=beta&t=OYezubWTduMR3wyuMXf7Eg7GLvZhSFJX-YQTQJ_KSvM" 
+            alt="Muhammad Akram's Profile Picture">
+        </td>
+        <td>
+            <h1>Muhammad Akram bin Rahman</h1>
+            <p>Graduate in Statistics</p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent mattis tincidunt lacus, ut tincidunt magna. Morbi tincidunt risus sit amet enim placerat, vel tristique ante congue. Vestibulum eget nisi nulla. </p>
+        </td>
+    </tr>
+</table>
+              
+    <div class="popup" id="message">
+		<p><strong>SPM Results</strong></p>
+        <!-- <p>
+            Additional Mathematics <br>
+        Mathematics <br>
+        Physics <br>
+        Chemistry <br>
+        Accounting <br>
+        Sejarah <br>
+        Pendidikan Islam <br>
+        Biology <br>
+        English <br>
+        Bahasa Melayu <br>
+
+        </p> -->
+
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Additional Mathematics</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Mathematics</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Physics</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Accounting</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Sejarah</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Pendidikan Islam</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Biology</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Bahasa Melayu</td>
+                    <td>A-</td>
+                </tr>
+            </tbody>
+        </table>
+
+		<button onclick="closePopup()">Close</button>
+	</div>
+
+    <hr>
+
+    <h3>Education</h3>
+    <!-- study, uni, year -->
+    <div>
+        <p>
+            <strong>Masters in Applied Statistics</strong> <br>
+        Universiti Teknologi MARA <br>
+        2021 - 2023 <br>
+        CGPA: 3.72 <br>
+        </p>
+    </div>  
+    <div>
+        <p>
+            <strong>Bachelor of Science (Hons.) Statistics</strong>  <br>
+         Universiti Teknologi MARA <br>
+         2018 - 2021 <br>
+         CGPA: 3.67
+        </p>
+    </div>
+    <div>
+        <p>
+            <strong>Bachelor of Science (Mathematics major)</strong>  <br>
+         The University of Melbourne <br>
+         2014 - 2017
+        </p>
+    </div>
+    <div>
+        <p>
+            <strong>International Baccalaureate</strong>  <br>
+         Kolej MARA Seremban <br>
+         2012 - 2014
+        </p>
+    </div>
+    <div>
+        <p>
+            <strong>Sijil Pelajaran Malaysia</strong>  <br>
+         SM Sains Tuanku Ja'afar <br>
+         2011 <br>
+
+         <a id="showPopup" style="text-decoration: underline; text-decoration: underline; color: #009347;" 
+         onmouseover="this.style.color='#009347'; this.style.cursor='hand'; this.style.textDecoration='underline';"
+         onmouseout="this.style.color='#009347'; this.style.cursor='pointer'; this.style.textDecoration='none';">
+            Result: 7A+ 2A 1A-
+         </a>
+
+         <div class="modal fade" id="popupBox" tabindex="-1" role="dialog" aria-labelledby="popupBoxLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="popupBoxLabel"><strong>SPM Results</strong></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col">Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Additional Mathematics</td>
+                                    <td>A+</td>
+                                </tr>
+                                <tr>
+                                    <td>Mathematics</td>
+                                    <td>A+</td>
+                                </tr>
+                                <tr>
+                                    <td>Physics</td>
+                                    <td>A+</td>
+                                </tr>
+                                <tr>
+                                    <td>Chemistry</td>
+                                    <td>A+</td>
+                                </tr>
+                                <tr>
+                                    <td>Accounting</td>
+                                    <td>A+</td>
+                                </tr>
+                                <tr>
+                                    <td>Sejarah</td>
+                                    <td>A+</td>
+                                </tr>
+                                <tr>
+                                    <td>Pendidikan Islam</td>
+                                    <td>A+</td>
+                                </tr>
+                                <tr>
+                                    <td>Biology</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>English</td>
+                                    <td>A</td>
+                                </tr>
+                                <tr>
+                                    <td>Bahasa Melayu</td>
+                                    <td>A-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var popup = document.querySelector(".modal");
+    
+            popup.addEventListener("click", function(event) {
+                event.stopPropagation();
+            });
+    
+            document.addEventListener("click", function(event) {
+                if (event.target.closest(".modal")) {
+                    return;
+                }
+                $("#popupBox").modal("hide");
+            });
+    
+            document.getElementById("showPopup").addEventListener("click", function(event) {
+                event.preventDefault();
+                $("#popupBox").modal("show");
+            });
+        </script>
+
+
+        </p>
+    </div>
+
+    <hr>
+    
+    <h3>Skills</h3>
+    <h4>Professional</h4>
+    <ul style="padding-left: 1em;">
+        <li>Data Mining</li>
+        <li>Text Mining</li>
+        <li>Outlier Detection</li>
+        <li>Database Management</li>
+        <li>Data Visualisation</li>
+        <li>Software Development (Windows)</li>
+        <li>Web Development (Front-End)</li>
+    </ul>
+
+    <h4>Statistical Tools</h4>   
+
+    <table class="table-sm">
+           
+        <tbody>
+            <tr>
+                <td >SPSS</td>
+                <td class="px-3">Advanced</td>
+            </tr>
+            <tr>
+                <td>RapidMiner</td>
+                <td class="px-3">Intermediate</td>
+            </tr>
+            <tr>
+                <td>R Studio</td>
+                <td class="px-3">Advanced</td>
+            </tr>     
+            <tr>
+                <td>Tableau</td>
+                <td class="px-3">Advanced</td>
+            </tr>  
+            <tr>
+                <td>SAS EMiner</td>
+                <td class="px-3">Beginner</td>
+            </tr>  
+            <tr>
+                <td>Power BI</td>
+                <td class="px-3">Intermediate</td>
+            </tr>         
+            <tr>
+                <td>Orange Tool</td>
+                <td class="px-3">Intermediate</td>
+            </tr>   
+            <tr>
+                <td>MS Excel</td>
+                <td class="px-3">Intermediate</td>
+            </tr>                  
+        </tbody>
+    </table>
+
+    <h4>Programming Languages</h4>    
+
+    <table class="table-sm">
+           
+        <tbody>
+            <tr>
+                <td >R</td>
+                <td class="px-3">Advanced</td>
+            </tr>
+            <tr>
+                <td>C++</td>
+                <td class="px-3">Intermediate</td>
+            </tr>
+            <tr>
+                <td>C#</td>
+                <td class="px-3">Advanced</td>
+            </tr>     
+            <tr>
+                <td>Python</td>
+                <td class="px-3">Advanced</td>
+            </tr>  
+            <tr>
+                <td>SAS</td>
+                <td class="px-3">Beginner</td>
+            </tr>  
+            <tr>
+                <td>Kotlin</td>
+                <td class="px-3">Intermediate</td>
+            </tr>                        
+        </tbody>
+    </table>
+
+    <h3>Languages</h3> 
+
+        <table class="table-sm">
+           
+            <tbody>
+                <tr>
+                    <td >Malay</td>
+                    <td class="px-3">Fluent</td>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td class="px-3">Fluent</td>
+                </tr>
+                <tr>
+                    <td>Spanish</td>
+                    <td class="px-3">Basic</td>
+                </tr>                
+            </tbody>
+        </table>
+
+    <hr>
+    
+    <h2>Working Experiences</h2>
+
+
+
+    <hr>
+
+    <h2>Achievements</h2>
+
+
+
+    <hr>
+
+    <h2>Project Title</h2>
+
+    <p>
+        <strong>Masters Dissertation</strong> <br>
+        Tajuk <br>
+        
+        <ul style="padding-left: 1em;">
+            <li>Lorem ipsum is a commonly used placeholder text in design and typesetting. It is a Latin-like text that is often used as a stand-in for real content in draft designs and layouts.</li>
+            <li>List item</li>
+            <li>List item</li>
+          </ul>          
+          
+    </p>
+
+    <p>
+        <strong>Degree Final Year Project</strong> <br>
+        Tajuk <br>        
+          
+          <ul style="padding-left: 1em;">
+            <li>Lorem ipsum is a commonly used placeholder text in design and typesetting. It is a Latin-like text that is often used as a stand-in for real content in draft designs and layouts.</li>
+            <li>List item</li>
+            <li>List item</li>
+          </ul>
+                    
+    </p>
+
+    <hr>
+
+    <h2>References</h2>
+    <p>
+        <strong>Dr Adzhar bin Rambli</strong> <br>
+        Supervisor for Masters Dissertation Project <br>
+        Senior Lecturer <br>
+        UiTM Shah Alam <br>
+        (+60) 12-595 8322
+    </p>
+    <p>
+        <strong>Hezlin Aryani binti Abd Rahman</strong> <br>
+        Supervisor for Degree Final Year Project <br>
+        Senior Lecturer <br>
+        UiTM Shah Alam <br>
+        (+60) 12-319 8638
+    </p>
+
+    
+
+
+</body>
+</html>
